@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FirestoreService } from '../servicios/datos/firestore.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  ListaCancion:any=[];
+  constructor(public fs:FirestoreService, public router:Router) {}
 
-  constructor() {}
+  ngOnInit(){
+    this.ListaCancion=this.fs.obtenerListaCancion().valueChanges();
+  }
 
 }

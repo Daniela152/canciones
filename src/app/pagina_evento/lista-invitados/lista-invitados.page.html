@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio-evento"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>lista de invitados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+  <ion-lis-header> <ion-label> Los invitados son</ion-label></ion-lis-header>
+    <ion-item tappable *ngFor="let evento of eventoActual" routerLink="/detalle-evento/{{evento.eventoActual}}" >   
+        <ion-label>
+            <h3> {{evento?.nombreInvitado}} </h3>
+  
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

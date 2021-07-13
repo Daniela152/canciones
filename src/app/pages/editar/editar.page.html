@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{(cancion | async)?.nombreCancion}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+      </ion-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+  <ion-content class="ion-padding" >
+    <form [formGroup]="formularioEditar" (submit)="modificaCancion()">
+      <ion-item>
+        <ion-label position="floating">Nombre de la Cancion</ion-label>
+        <ion-input formControlName="nombreCancion" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre del Artista</ion-label>
+        <ion-input formControlName="nombreArtista" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre del Album</ion-label>
+        <ion-input formControlName="nombreAlbum" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripcion de la cancion</ion-label>
+        <ion-input formControlName="descripCancion" type="text"></ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit">Guardar</ion-button>
+    </form>
+</ion-content>
